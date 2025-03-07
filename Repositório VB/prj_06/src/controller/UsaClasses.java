@@ -25,8 +25,10 @@ public class UsaClasses {
 
         //JOptionPane.showMessageDialog(null,media);
         //JOptionPane.showMessageDialog(null,status);
-        /*JOptionPane.showMessageDialog(null,"A média do aluno "+
-                obj_aluno.getNome() + " é: " + media + "\nSeu status é: "+ ((status)? "Aprovado":"Reprovado"));*/
+        /*JOptionPane.showMessageDialog(null,"A média do aluno "+ obj_aluno.getNome() + " é: " + media + "\nSeu status é: "+ ((status)? "Aprovado":"Reprovado"));*/
+
+
+        //saída de dados
         JOptionPane.showMessageDialog(null,obj_aluno.imprimirdados());
         JOptionPane.showMessageDialog(null,obj_aluno2.imprimirdados());
 
