@@ -1,5 +1,5 @@
 package model;
-
+//se quiser pode mudar para get e set
 import javax.swing.*;
 
 public class Aluno {
