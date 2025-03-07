@@ -98,9 +98,4 @@ public class Aluno {
        "\nStatus" + (this.verificarAprovacao(this.calcularMedia(this.nota1,this.nota2 ))?"Aprovado":"Reprovado");
 
   }
-
-
-
-
-
 }
