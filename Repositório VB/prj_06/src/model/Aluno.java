@@ -72,7 +72,8 @@ public class Aluno {
             this.nome = nome;
         }
         else{
-            JOptionPane.showMessageDialog(null,"Coloca um nome válido");
+             // a única que coisa que eu tinha mudado era por Message no lugar do Input
+            JOptionPane.showInputDialog(null,"Coloca um nome válido");
         }
     }
     public String getRgm(){
@@ -84,7 +85,8 @@ public class Aluno {
             this.rgm = rgm;
         }
         else{
-            JOptionPane.showMessageDialog(null,"Coloca um rgm válido");
+            // a única que coisa que eu tinha mudado era por Message no lugar do Input
+            JOptionPane.showInputDialog(null,"Coloca um rgm válido");
         }
     }
 
