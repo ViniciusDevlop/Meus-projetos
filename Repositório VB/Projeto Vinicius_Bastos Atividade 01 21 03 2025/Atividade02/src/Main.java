@@ -9,6 +9,8 @@ public class Main {
 
 
         Triangulo Triangulo2 = new Triangulo();
+        System.out.println("Digite a Base do Triangulo 2: ");
+       double base= ent.nextDouble
 
 
 
