@@ -1,0 +1,55 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package lista2203;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+
+public class Lista2203 {
+
+    public static void main(String[] args) {
+        
+        List<String> listaDeNomesCresc = new ArrayList<>();
+        List<String> listaDeNomesDecresc = new ArrayList<>(); // Adicionada lista decrescente
+
+        // Array dos nomes
+        String[] nomes = {"Alice", "Aurora", "Marina", "Lais",
+    "Laura", "Lara", "Stella", "Melina",
+    "Maria Alice", "Maria Clara", "Jade", "Bianca",
+    "Sophia", "Livia", "Maria Liz", "Louise",
+    "Manuela", "Esther", "Ana Laura", "Ana Beatriz",
+    "Maite", "Giovanna", "Maria Isis", "Heloise",
+    "Liz", "Sarah", "Ana Luisa", "Malu",
+    "Cecilia", "Maria Cecilia", "Gabriela", "Melinda",
+    "Isabella", "Lorena", "Alana", "Leticia",
+    "Luisa", "Beatriz", "Rafaela", "Maria Valentina",
+    "Eloa", "Rebeca", "Vitoria", "Chloe",
+    "Heloisa", "Luna", "Isabelly", "Maria Elisa"
+        };
+
+        // Adicionar os nomes às listas
+        for (int i = 0; i < nomes.length; i++) {
+            listaDeNomesCresc.add(nomes[i]);
+            listaDeNomesDecresc.add(nomes[i]); // Adiciona à lista decrescente
+        }
+
+        // Ordenar as listas
+        Collections.sort(listaDeNomesCresc);
+        Collections.sort(listaDeNomesDecresc, Collections.reverseOrder()); // Ordena decrescente
+
+        // Exibir as listas ordenadas
+        System.out.println("Lista de nomes em ordem crescente:");
+        for (String nome : listaDeNomesCresc) {
+            System.out.println(nome);
+        }
+
+        System.out.println("\nLista de nomes em ordem decrescente:");
+        for (String nome : listaDeNomesDecresc) {
+            System.out.println(nome);
+        }
+    }
+}
