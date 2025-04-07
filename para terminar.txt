@@ -1,0 +1,15 @@
+create database aluno;
+use aluno;
+
+create table aluno(
+nome_aluno varchar(50),
+rgm numeric(8),
+dt_nascimento date,
+ constraint pk_aluno primary key (nome_aluno)
+);
+create table disciplina(
+codigo int not null,
+nome_disciplina varchar(50),
+num_creditos int,
+constraint pk_disciplina primary key (codigo)
+);
