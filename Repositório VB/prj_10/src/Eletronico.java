@@ -17,11 +17,11 @@ public class Eletronico extends Produto {
 
     public void setVoltagem(int argVoltagem) {
         if (argVoltagem == 110 || argVoltagem == 220) {
-
+          this.voltagem = argVoltagem;
         } else {
             System.out.println("Voltagem inválida tá maluco nengue!");
         }
-        this.voltagem = argVoltagem;
+        
     }
    public String print(){
         /* String retorno;
