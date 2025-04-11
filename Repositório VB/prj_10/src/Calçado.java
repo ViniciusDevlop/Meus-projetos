@@ -50,7 +50,7 @@ public class Calçado extends Vestuario{
             System.out.println("Material da parte interna inválido");
         }
     }
-
+//a diferença entre && e || é que o && precisa que as duas condições sejam verdadeiras enquanto  a || só precisa que uma seja verdadeira.
     public String print(){
         String retorno;
         retorno = super.print();
