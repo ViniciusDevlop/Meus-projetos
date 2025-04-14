@@ -13,3 +13,5 @@ nome_disciplina varchar(50),
 num_creditos int,
 constraint pk_disciplina primary key (codigo)
 );
+
+create
