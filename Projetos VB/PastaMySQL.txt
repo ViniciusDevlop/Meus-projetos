@@ -1,2 +1,0 @@
-Isso aqui é a pasta com todos os projetos que fiz no MySQL conforme novos projetos forem surgindo cada vez mais adicionarei.
-Todos feitos no MySQL Workbench
