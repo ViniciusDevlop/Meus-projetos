@@ -75,5 +75,5 @@ EXCEPTION
     DBMS_OUTPUT.PUT_LINE('Nenhum empregado encontrado com o ID: ' || v_id);
 
   WHEN OTHERS THEN
-    DBMS_OUTPUT.PUT_LINE('Erro desconhecido:  ' || SQLERRM);  
+    DBMS_OUTPUT.PUT_LINE('Erro desconhecido:  ' || SQLERRM);  */
 
