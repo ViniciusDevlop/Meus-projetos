@@ -103,4 +103,7 @@ END;
 /* outra maneira de chamar */
 
 Execute INSERIR_CONSUMIDOR(4, 'João Dias', 'joao@email.com');
-
+--Para colocar em ordem.
+SELECT ID, NOME, EMAIL
+FROM CONSUMIDORES
+ORDER BY ID ASC;  
