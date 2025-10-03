@@ -100,14 +100,6 @@ BEGIN
   inserir_consumidor(3, 'Mário Costa', 'mario@email.com');
 END;      
 
-BEGIN
-  inserir_consumidor(5, 'Vinicius Bastos', 'vinicius@email.com');
-END;
-
-BEGIN
-  inserir_consumidor(6, 'Gustavo Macedo', 'gustavo@email.com');
-END;
-
 
 /* outra maneira de chamar procedure */
 
