@@ -100,9 +100,21 @@ BEGIN
   inserir_consumidor(3, 'Mário Costa', 'mario@email.com');
 END;      
 
-/* outra maneira de chamar */
+BEGIN
+  inserir_consumidor(5, 'Vinicius Bastos', 'vinicius@email.com');
+END;
+
+BEGIN
+  inserir_consumidor(6, 'Gustavo Macedo', 'gustavo@email.com');
+END;
+
+
+/* outra maneira de chamar procedure */
 
 Execute INSERIR_CONSUMIDOR(4, 'João Dias', 'joao@email.com');
+
+
+
 --Para colocar em ordem.
 SELECT ID, NOME, EMAIL
 FROM CONSUMIDORES
