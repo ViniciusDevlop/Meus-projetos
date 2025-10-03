@@ -88,6 +88,13 @@ END inserir_consumidor;
 
 
 /* uma maneira de chamar procedure */
+BEGIN
+  inserir_consumidor(2, 'Paulo Moraes', 'paulo@email.com');
+END;
+
+BEGIN
+  inserir_consumidor(1, 'Marcos Andrade', 'marcos@email.com');
+END;
 
 BEGIN
   inserir_consumidor(3, 'Mário Costa', 'mario@email.com');
