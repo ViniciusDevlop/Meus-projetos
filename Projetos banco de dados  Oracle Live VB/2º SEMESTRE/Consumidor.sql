@@ -1,35 +1,35 @@
-/*CREATE OR REPLACE PROCEDURE saudar(
+CREATE OR REPLACE PROCEDURE saudar(
  p_nome in VARCHAR2
 )is 
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Olá, '|| p_nome || '!');
-END saudar; */
+END saudar; 
 
 
-/*
+
 BEGIN
   saudar('Capitão Vinicius');
-END;    */
+END;    
 
 
-/*CREATE OR REPLACE PROCEDURE mostrar_texto_fixo(
+CREATE OR REPLACE PROCEDURE mostrar_texto_fixo(
     p_resultado OUT VARCHAR2
 )IS
  BEGIN
   p_resultado := 'Esse texto é fixo da PROCEDURE';
  
-END mostrar_texto_fixo;*/
+END mostrar_texto_fixo;
 
 
-/*DECLARE 
+DECLARE 
   v_meu_texto varchar2(100);
 BEGIN
     mostrar_texto_fixo(v_meu_texto);
     DBMS_OUTPUT.PUT_LINE('Texto: '|| v_meu_texto);
-END;*/
+END;
 
 
-/*CREATE OR REPLACE PROCEDURE adicionar_dez_porcento(
+CREATE OR REPLACE PROCEDURE adicionar_dez_porcento(
     p_valor IN OUT number
 )IS
  v_valor_original number;
@@ -41,10 +41,10 @@ BEGIN
   p_valor := p_valor * 1.10;
   
    DBMS_OUTPUT.PUT_LINE('Original: ' ||v_valor_original || '-> Novo: ' || p_valor);
-END adicionar_dez_porcento;*/     
+END adicionar_dez_porcento;    
 
 
-/*DECLARE 
+DECLARE 
   v_preco number := 100;
 BEGIN
   adicionar_dez_porcento(v_preco);
@@ -57,15 +57,15 @@ BEGIN
   adicionar_dez_porcento(v_preco);   
   adicionar_dez_porcento(v_preco);
   adicionar_dez_porcento(v_preco);       
-END;*/
+END;
 
-/*CREATE table consumidores (
+CREATE table consumidores (
   id number primary key,
   nome varchar2(50),
   email varchar(100)
-); */
+); 
  
-/*CREATE OR REPLACE PROCEDURE  inserir_consumidor(
+CREATE OR REPLACE PROCEDURE  inserir_consumidor(
    p_id IN consumidores.id%TYPE,
    p_nome IN consumidores.nome%TYPE,
    p_email IN consumidores.email%TYPE
@@ -82,18 +82,18 @@ EXCEPTION
  WHEN OTHERS THEN
  DBMS_OUTPUT.PUT_LINE('ERRO DESCONHECIDO! - mensagem: ' || SQLERRM );
 
-END inserir_consumidor; */
+END inserir_consumidor; 
   
  -- select * from consumidores;
 
 
-/* uma maneira de chamar procedure
+/* uma maneira de chamar procedure */
 
 BEGIN
   inserir_consumidor(3, 'Mário Costa', 'mario@email.com');
 END;      
-*/
-/* outra maneira de chamar 
+
+/* outra maneira de chamar */
 
 Execute INSERIR_CONSUMIDOR(4, 'João Dias', 'joao@email.com');
-*/
+
