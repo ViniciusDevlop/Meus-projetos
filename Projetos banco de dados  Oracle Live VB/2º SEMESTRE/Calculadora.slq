@@ -1,0 +1,160 @@
+CREATE OR REPLACE PACKAGE BODY pkg_calculadora AS
+ 
+    -- Função de Soma
+    FUNCTION soma_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        RETURN p_valor1 + p_valor2; 
+    END soma_valores;
+
+    -- Função de Subtrair
+    FUNCTION subtrai_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        RETURN p_valor1 - p_valor2; 
+    END subtrai_valores; 
+    
+    -- Função de Dividir 
+    FUNCTION divide_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        -- Adicionando tratamento básico para divisão por zero
+        IF p_valor2 = 0 THEN
+            DBMS_OUTPUT.PUT_LINE('ERRO: Divisão por zero não permitida.');
+            RETURN NULL;
+        END IF;
+        RETURN p_valor1 / p_valor2; 
+    END divide_valores; 
+    
+    -- Função de Multiplicar   
+    FUNCTION multiplica_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        RETURN p_valor1 * p_valor2; 
+    END multiplica_valores;
+    
+    -- Procedimento Principal
+    PROCEDURE calcular_e_mostrar(
+        p_valor1 NUMBER,
+        p_valor2 NUMBER,
+        p_operacao VARCHAR2
+    ) AS
+        v_resultado NUMBER;
+    BEGIN
+        CASE UPPER(p_operacao)
+            WHEN 'SOMA' THEN 
+                v_resultado := soma_valores(p_valor1, p_valor2);
+                DBMS_OUTPUT.PUT_LINE('Soma: ' || p_valor1 || ' + ' || p_valor2 || ' = ' || v_resultado);
+            
+            WHEN 'SUBTRACAO' THEN 
+                v_resultado := subtrai_valores(p_valor1, p_valor2);
+                DBMS_OUTPUT.PUT_LINE('Subtração: ' || p_valor1 || ' - ' || p_valor2 || ' = ' || v_resultado);
+            
+            WHEN 'DIVISAO' THEN 
+                -- Chamando a função de divisão que já trata a divisão por zero
+                v_resultado := divide_valores(p_valor1, p_valor2);
+                
+                -- Só exibe se a divisão não retornou NULL (erro)
+                IF v_resultado IS NOT NULL THEN
+                    DBMS_OUTPUT.PUT_LINE('Divisão: ' || p_valor1 || ' / ' || p_valor2 || ' = ' || v_resultado);
+                END IF;
+            
+            WHEN 'MULTIPLICACAO' THEN 
+                v_resultado := multiplica_valores(p_valor1, p_valor2);
+                DBMS_OUTPUT.PUT_LINE('Multiplicação: ' || p_valor1 || ' x ' || p_valor2 || ' = ' || v_resultado);
+            
+            ELSE 
+                DBMS_OUTPUT.PUT_LINE('Operação Inválida! Use: Soma, Subtracao, Multiplicacao ou Divisao');
+        END CASE;
+    END calcular_e_mostrar;
+    
+END pkg_calculadora;
+
+
+
+Create or replace package pkg_calculadora as 
+ 
+   Function soma_valores(p_valor1 Number ,p_valor2 Number) return number; 
+   Function subtrai_valores(p_valor1 Number ,p_valor2 Number) return number; 
+   Function divide_valores(p_valor1 Number ,p_valor2 Number) return number; 
+   Function multiplica_valores(p_valor1 Number ,p_valor2 Number) return number; 
+
+  Procedure calcular_e_mostrar(
+   p_valor1 Number,
+   p_valor2 Number,
+   p_operacao varchar2
+  ); 
+
+END pkg_calculadora;*/
+
+CREATE OR REPLACE PACKAGE BODY pkg_calculadora AS
+ 
+    -- Função de Soma
+    FUNCTION soma_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        RETURN p_valor1 + p_valor2; 
+    END soma_valores;
+
+    -- Função de Subtrair
+    FUNCTION subtrai_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        RETURN p_valor1 - p_valor2; 
+    END subtrai_valores; 
+    
+    -- Função de Dividir 
+    FUNCTION divide_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        -- Adicionando tratamento básico para divisão por zero
+        IF p_valor2 = 0 THEN
+            DBMS_OUTPUT.PUT_LINE('ERRO: Divisão por zero não permitida.');
+            RETURN NULL;
+        END IF;
+        RETURN p_valor1 / p_valor2; 
+    END divide_valores; 
+    
+    -- Função de Multiplicar   
+    FUNCTION multiplica_valores(p_valor1 NUMBER, p_valor2 NUMBER) RETURN NUMBER AS
+    BEGIN
+        RETURN p_valor1 * p_valor2; 
+    END multiplica_valores;
+    
+    -- Procedimento Principal
+    PROCEDURE calcular_e_mostrar(
+        p_valor1 NUMBER,
+        p_valor2 NUMBER,
+        p_operacao VARCHAR2
+    ) AS
+        v_resultado NUMBER;
+    BEGIN
+        CASE UPPER(p_operacao)
+            WHEN 'SOMA' THEN 
+                v_resultado := soma_valores(p_valor1, p_valor2);
+                DBMS_OUTPUT.PUT_LINE('Soma: ' || p_valor1 || ' + ' || p_valor2 || ' = ' || v_resultado);
+            
+            WHEN 'SUBTRACAO' THEN 
+                v_resultado := subtrai_valores(p_valor1, p_valor2);
+                DBMS_OUTPUT.PUT_LINE('Subtração: ' || p_valor1 || ' - ' || p_valor2 || ' = ' || v_resultado);
+            
+            WHEN 'DIVISAO' THEN 
+                -- Chamando a função de divisão que já trata a divisão por zero
+                v_resultado := divide_valores(p_valor1, p_valor2);
+                
+                -- Só exibe se a divisão não retornou NULL (erro)
+                IF v_resultado IS NOT NULL THEN
+                    DBMS_OUTPUT.PUT_LINE('Divisão: ' || p_valor1 || ' / ' || p_valor2 || ' = ' || v_resultado);
+                END IF;
+            
+            WHEN 'MULTIPLICACAO' THEN 
+                v_resultado := multiplica_valores(p_valor1, p_valor2);
+                DBMS_OUTPUT.PUT_LINE('Multiplicação: ' || p_valor1 || ' x ' || p_valor2 || ' = ' || v_resultado);
+            
+            ELSE 
+                DBMS_OUTPUT.PUT_LINE('Operação Inválida! Use: Soma, Subtracao, Multiplicacao ou Divisao');
+        END CASE;
+    END calcular_e_mostrar;
+    
+END pkg_calculadora;
+
+BEGIN
+    pkg_calculadora.calcular_e_mostrar(8,6, 'soma');
+    pkg_calculadora.calcular_e_mostrar(18,5, 'subtracao');
+    pkg_calculadora.calcular_e_mostrar(10,2, 'divisao');
+    pkg_calculadora.calcular_e_mostrar(22,7, 'multiplicacao');
+    pkg_calculadora.calcular_e_mostrar(22,7, 'sopa não é janta');
+End; 
